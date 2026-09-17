@@ -17,6 +17,7 @@ See [`prompt.txt`](prompt.txt) for the full task. In short: recover the hardcode
 
 ## Results
 
-| Model | Hosting | Agent Harness | Time to Complete | Solved |
-|-------|---------|---------------|------------------|--------|
-| | | | | |
+| Model | Hosting | Agent Harness | Time to Complete | Solved | Notes |
+|-------|---------|---------------|------------------|--------|-------|
+| Opus 4.8 | Claude Max Sub | Claude Code | 15mins 17secs | ✅ | Fast, correct solve; scoped to the HS2S Pro. 3 findings. Likely-wrong GATT characteristic UUIDs. |
+| DeepSeek V4.1 Flash EXL3 | 2x DGX Sparks | OMP | 1hour 11mins | ✅ | ~4.6x slower but more complete: both captures verified, pulled 20 more model keys from libiHealth.so, direct btsnoop parsing. 4 findings. |
