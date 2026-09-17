@@ -22,7 +22,3 @@ GOAL:
 - Keep running project notes in PROGRESS.md.
 - Issue a report.md with the full protocol writeup, the recovered key/algorithm,
   a working PoC script, and any security findings (CVSS + CWE per finding).
-
-TOOLS:
-- all skills (apktool, jadx for the APK; the rohirrim IoT/BLE tooling for traffic)
-- standard binwalk / python / xxtea etc as needed
