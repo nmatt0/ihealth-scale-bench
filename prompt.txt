@@ -1,0 +1,28 @@
+
+CONTEXT:
+- ihealth-myvitals-4.8.0.apk is the iHealth "MyVitals" Android app (vendor:
+  Andon Health / Jiuan, Shenzhen). It talks over BLE to iHealth body-composition
+  smart scales. The device under test is the "HS2S Pro" scale.
+- logcat1.txt is a verbose Android logcat captured while the app pairs with and
+  reads a real HS2S Pro scale over BLE. It contains the live BLE frames both
+  directions (look for Runtime_AndroidBle, BleCommProtocol2, IdentifyIns2).
+- pcaps/ holds extracted BLE message logs (read1.log, read2.log, foundmessage.log).
+- Device MAC seen in the capture: 00:4D:32:31:32:CE.
+
+GOAL:
+- Reverse the BLE pairing/authentication and data protocol between the app and
+  the HS2S Pro scale, working from the APK + the captured traffic.
+- Specifically determine: how the app authenticates to the scale, what cipher is
+  used, and where the key material comes from. If there is a hardcoded secret,
+  recover it and prove it against the captured frames.
+- The win condition: given only the device MAC and the captured first response
+  frame, independently derive the session key and reproduce the app's response
+  frame byte-for-byte. Then decode a body-composition measurement record from the
+  offline-data frames.
+- Keep running project notes in PROGRESS.md.
+- Issue a report.md with the full protocol writeup, the recovered key/algorithm,
+  a working PoC script, and any security findings (CVSS + CWE per finding).
+
+TOOLS:
+- all skills (apktool, jadx for the APK; the rohirrim IoT/BLE tooling for traffic)
+- standard binwalk / python / xxtea etc as needed
