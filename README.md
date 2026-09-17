@@ -6,9 +6,11 @@ From my YouTube video: https://www.youtube.com/watch?v=hqau6n6eW9s
 
 ## The challenge
 
-See [`prompt.txt`](prompt.txt) for the full task. In short: recover the hardcoded secret, derive the session key from the device MAC + first response frame, reproduce the app's response frame byte-for-byte, and decode a body-composition record.
+See [`prompt.txt`](ihealth-crypto-challenge/prompt.txt) for the full task. In short: recover the hardcoded secret, derive the session key from the device MAC + first response frame, reproduce the app's response frame byte-for-byte, and decode a body-composition record.
 
 ## Contents
+
+All challenge artifacts live under [`ihealth-crypto-challenge/`](ihealth-crypto-challenge/):
 
 - `ihealth-myvitals-4.8.0.apk` — the Android app (Git LFS)
 - `logcat1.txt` — logcat with live BLE frames during a real pairing
