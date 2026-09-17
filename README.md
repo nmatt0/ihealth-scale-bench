@@ -23,3 +23,4 @@ All challenge artifacts live under [`ihealth-crypto-challenge/`](ihealth-crypto-
 |-------|---------|---------------|------------------|--------|-------|
 | Opus 4.8 | Claude Max Sub | Claude Code | 15mins 17secs | ✅ | Fast, correct solve; scoped to the HS2S Pro. 3 findings. Likely-wrong GATT characteristic UUIDs. |
 | DeepSeek V4.1 Flash EXL3 | 2x DGX Sparks | OMP | 1hour 11mins | ✅ | ~4.6x slower but more complete: both captures verified, pulled 20 more model keys from libiHealth.so, direct btsnoop parsing. 4 findings. |
+| DeepSeek v4 Flash Vision-Exp | 2x DGX Sparks | OMP | 39mins 20sec | ✅ | ~2.6x slower than Opus but well under the v4.1 EXL3 run. Self-decompiled (jadx), direct btsnoop parsing, byte-for-byte solve. 3 findings. Used correct GATT handles (0x0026 write, 0x0023 notify) rather than guessed characteristic UUIDs. Did not mine the libiHealth.so native key table. |
